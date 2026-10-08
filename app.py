@@ -69,16 +69,6 @@ st.caption("Machine Learning + NLP (TF-IDF) | Naive Bayes, Logistic Regression, 
 model_name = st.sidebar.selectbox("Select model", list(models.keys()))
 st.sidebar.write(f"Training data: **{n_rows}** messages")
 
-examples = {
-    "Spam example": "Congratulations! You have won a free prize. Call now to claim your reward!",
-    "Ham example": "Hi, are we still meeting at 5pm today for the project discussion?",
-}
-c1, c2 = st.columns(2)
-if c1.button("Try a spam example"):
-    st.session_state["msg"] = examples["Spam example"]
-if c2.button("Try a ham example"):
-    st.session_state["msg"] = examples["Ham example"]
-
 msg = st.text_area("Enter the email / SMS text:", key="msg", height=150)
 
 if st.button("Check message", type="primary"):
